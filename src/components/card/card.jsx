@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import App from "../app/app";
+// import App from "../app/app";
 
 const Card = ({isPremium, previewImage, id, title, description, price, type}) => {
   return (
@@ -41,9 +41,8 @@ const Card = ({isPremium, previewImage, id, title, description, price, type}) =>
   );
 };
 
-
 Card.propTypes = {
-  hotels: PropTypes.arrayOf(
+  hotel: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       isPremium: PropTypes.bool.isRequired,
@@ -54,4 +53,5 @@ Card.propTypes = {
       type: PropTypes.string.isRequired
     })).isRequired
 };
+
 export default Card;
