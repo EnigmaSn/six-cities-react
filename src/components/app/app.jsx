@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Routes } from '../../routes';
 
-import Card from "../card/card";
-import Main from "../main/main";
-import Login from "../login/login";
-import Favorites from "../favorites/favorites";
-import Room from "../room/room";
-import Error from "../error/error";
+import MainPage from "../main-page/main-page";
+import LoginPage from "../login-page/login-page";
+import FavoritesPage from "../favorites-page/favorites-page";
+import RoomPage from "../room-page/room-page";
+import ErrorPage from "../error/error";
 
 const App = (props) => {
 
@@ -15,20 +15,20 @@ const App = (props) => {
     <Fragment>
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact>
-            <Main hotelsData={ props.hotelsData }/>
+          <Route path={Routes.MAIN} exact>
+            <MainPage hotelsData={ props.hotelsData }/>
           </Route>
-          <Route path="/login">
-            <Login />
+          <Route path={Routes.LOGIN} exact>
+            <LoginPage />
           </Route>
-          <Route path="/favorites">
-            <Favorites />
+          <Route path={Routes.FAVORITES} exact>
+            <FavoritesPage />
           </Route>
-          <Route path="/offer/:id">
-            <Room />
+          <Route path={Routes.HOTELS}>
+            <RoomPage />
           </Route>
           <Route>
-            <Error />
+            <ErrorPage />
           </Route>
         </Switch>
       </BrowserRouter>
